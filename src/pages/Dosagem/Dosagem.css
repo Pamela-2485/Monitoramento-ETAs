@@ -1,0 +1,260 @@
+.pagina-dosagem {
+  width: 100%;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho-dosagem {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  margin-bottom: 22px;
+}
+
+
+.cabecalho-dosagem h1 {
+  margin: 0;
+
+  color: #073b75;
+
+  font-size: 28px;
+}
+
+
+.cabecalho-dosagem p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+
+  font-size: 13px;
+}
+
+
+.icone-dosagem {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf4fb;
+
+  color: #073b75;
+
+  border-radius: 12px;
+}
+
+
+/* SELEÇÃO */
+
+.card-selecao-dosadora {
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+
+  border-radius: 14px;
+
+  padding: 18px;
+
+  margin-bottom: 16px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+.campo-dosagem {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+
+.campo-dosagem label {
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.campo-dosagem select {
+  width: 100%;
+  height: 40px;
+
+  padding: 0 11px;
+
+  border: 1px solid #cfd8e3;
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #263445;
+
+  outline: none;
+}
+
+
+/* RESUMO */
+
+.resumo-dosadora-selecionada {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-bottom: 16px;
+}
+
+
+.resumo-dosadora-selecionada div {
+  background: #f8fafc;
+
+  border: 1px solid #e1e7ed;
+
+  border-radius: 10px;
+
+  padding: 11px 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+}
+
+
+.resumo-dosadora-selecionada span {
+  color: #6b7280;
+
+  font-size: 11px;
+}
+
+
+.resumo-dosadora-selecionada strong {
+  color: #073b75;
+
+  font-size: 13px;
+}
+
+
+/* CARDS DE OPÇÕES */
+
+.opcoes-dosagem {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 16px;
+}
+
+
+.card-opcao-dosagem {
+  min-height: 125px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+
+  padding: 20px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+
+  border-radius: 14px;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+.card-opcao-dosagem:hover {
+  transform: translateY(-2px);
+
+  border-color: #aacce5;
+
+  box-shadow:
+    0 7px 18px rgba(0, 0, 0, 0.08);
+}
+
+
+.icone-opcao-dosagem {
+  width: 52px;
+  height: 52px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eaf4fb;
+
+  color: #073b75;
+
+  border-radius: 12px;
+}
+
+
+.texto-opcao-dosagem {
+  flex: 1;
+}
+
+
+.texto-opcao-dosagem h2 {
+  margin: 0 0 5px;
+
+  color: #073b75;
+
+  font-size: 17px;
+}
+
+
+.texto-opcao-dosagem p {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 11px;
+
+  line-height: 1.5;
+}
+
+
+.seta-opcao {
+  flex-shrink: 0;
+
+  color: #9ca3af;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 750px) {
+
+  .opcoes-dosagem,
+  .resumo-dosadora-selecionada {
+    grid-template-columns: 1fr;
+  }
+
+}

@@ -1,0 +1,572 @@
+.pagina-historico-monitoramento {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho-historico-monitoramento {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+
+  min-width: 0;
+}
+
+.cabecalho-historico-monitoramento > div > span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.cabecalho-historico-monitoramento h1 {
+  margin: 0;
+
+  color: #073b75;
+
+  font-size: 27px;
+}
+
+.cabecalho-historico-monitoramento p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.botao-voltar-monitoramento {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #d7e0e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #073b75;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.botao-voltar-monitoramento:hover {
+  background: #f7f9fb;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.card-filtros-monitoramento {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 18px;
+
+  margin-bottom: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+}
+
+.titulo-filtro-monitoramento {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 16px;
+
+  color: #073b75;
+}
+
+.titulo-filtro-monitoramento h2 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.grid-filtros-monitoramento {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr)) auto;
+
+  gap: 12px;
+
+  align-items: end;
+}
+
+.campo-filtro-monitoramento {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.campo-filtro-monitoramento label {
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.campo-filtro-monitoramento input,
+.campo-filtro-monitoramento select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+}
+
+.botao-buscar-monitoramento {
+  height: 40px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #073b75;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.botao-buscar-monitoramento:hover {
+  background: #0b4d91;
+}
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.card-resultados-monitoramento {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.topo-resultados-monitoramento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+
+  min-width: 0;
+}
+
+.titulo-resultados-monitoramento {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #073b75;
+}
+
+.titulo-resultados-monitoramento h2 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.topo-resultados-monitoramento > div > span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   EXCEL
+========================= */
+
+.botao-exportar-monitoramento {
+  height: 38px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #217346;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.botao-exportar-monitoramento:hover {
+  background: #185c37;
+}
+
+.botao-exportar-monitoramento:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   SEM RESULTADOS
+========================= */
+
+.sem-resultados-monitoramento {
+  padding: 25px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  background: #f7f9fb;
+
+  border-radius: 9px;
+}
+
+
+/* =========================================
+   ÁREA FIXA DA TABELA
+   ROLAGEM VERTICAL + HORIZONTAL
+========================================= */
+
+.tabela-monitoramento-wrapper {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 320px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior: contain;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.tabela-historico-monitoramento {
+  width: 1050px;
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  table-layout: auto;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   CABEÇALHO FIXO
+========================= */
+
+.tabela-historico-monitoramento thead {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 3;
+}
+
+.tabela-historico-monitoramento th {
+  height: 30px;
+
+  box-sizing: border-box;
+
+  padding: 4px 5px;
+
+  border: 1px solid #aab5c0;
+
+  background: #c6d9ee;
+
+  color: #1f2937;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   CÉLULAS
+========================= */
+
+.tabela-historico-monitoramento td {
+  height: 29px;
+
+  box-sizing: border-box;
+
+  padding: 3px 5px;
+
+  border: 1px solid #cbd3db;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  text-align: center;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+.tabela-historico-monitoramento tbody tr:nth-child(even) td {
+  background: #f7f9fb;
+}
+
+.tabela-historico-monitoramento tbody tr:hover td {
+  background: #eef6fc;
+}
+
+
+/* =========================
+   PRODUTO
+========================= */
+
+.celula-produto-monitoramento {
+  min-width: 150px;
+
+  text-align: left !important;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   VARIAÇÃO
+========================= */
+
+.variacao-negativa {
+  color: #b42318 !important;
+
+  font-weight: 700;
+}
+
+.variacao-positiva {
+  color: #16803c !important;
+
+  font-weight: 700;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status-monitoramento {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 72px;
+
+  padding: 4px 7px;
+
+  border-radius: 20px;
+
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.status-monitoramento.online {
+  background: #e8f7ee;
+
+  color: #18753b;
+}
+
+.status-monitoramento.offline {
+  background: #fff0ee;
+
+  color: #b42318;
+}
+
+
+/* =========================================
+   BARRAS DA TABELA
+========================================= */
+
+.tabela-monitoramento-wrapper::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.tabela-monitoramento-wrapper::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.tabela-monitoramento-wrapper::-webkit-scrollbar-thumb {
+  background: #c7cdd4;
+
+  border-radius: 10px;
+}
+
+.tabela-monitoramento-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #aeb6bf;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 1000px) {
+
+  .grid-filtros-monitoramento {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .grid-filtros-monitoramento {
+    grid-template-columns: 1fr;
+  }
+
+
+  .topo-resultados-monitoramento {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .botao-exportar-monitoramento,
+  .botao-buscar-monitoramento {
+    width: 100%;
+  }
+
+
+  .card-filtros-monitoramento,
+  .card-resultados-monitoramento {
+    padding: 14px;
+  }
+
+
+  .tabela-monitoramento-wrapper {
+    height: 280px;
+  }
+
+
+  .tabela-historico-monitoramento {
+    width: 1050px;
+    min-width: 1050px;
+  }
+
+}

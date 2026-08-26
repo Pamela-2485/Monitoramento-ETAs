@@ -1,0 +1,545 @@
+.pagina-historico-analises {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho-historico-analises {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 15px;
+
+  margin-bottom: 22px;
+
+  min-width: 0;
+}
+
+.cabecalho-historico-analises > div > span {
+  display: block;
+
+  margin-bottom: 3px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.cabecalho-historico-analises h1 {
+  margin: 0;
+
+  color: #073b75;
+
+  font-size: 27px;
+}
+
+.cabecalho-historico-analises p {
+  margin: 5px 0 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+.botao-voltar-historico-analises {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #d7e0e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #073b75;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   FILTROS
+========================= */
+
+.card-filtros-analises {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 18px;
+
+  margin-bottom: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+}
+
+.titulo-filtro-analises {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 16px;
+
+  color: #073b75;
+}
+
+.titulo-filtro-analises h2 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.grid-filtros-analises {
+  width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr)) auto;
+
+  gap: 12px;
+
+  align-items: end;
+}
+
+.campo-filtro-analises {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  min-width: 0;
+}
+
+.campo-filtro-analises label {
+  color: #374151;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.campo-filtro-analises input,
+.campo-filtro-analises select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+}
+
+.botao-buscar-analises {
+  height: 40px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #073b75;
+
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   RESULTADOS
+========================= */
+
+.card-resultados-analises {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+.topo-resultados-analises {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 14px;
+
+  min-width: 0;
+}
+
+.titulo-resultados-analises {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #073b75;
+}
+
+.titulo-resultados-analises h2 {
+  margin: 0;
+
+  font-size: 16px;
+}
+
+.topo-resultados-analises > div > span {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   EXCEL
+========================= */
+
+.botao-exportar-excel {
+  height: 38px;
+
+  padding: 0 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 6px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #217346;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.botao-exportar-excel:disabled {
+  opacity: 0.45;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================
+   SEM RESULTADOS
+========================= */
+
+.sem-resultados-analises {
+  padding: 25px;
+
+  text-align: center;
+
+  color: #6b7280;
+
+  font-size: 12px;
+
+  background: #f7f9fb;
+
+  border-radius: 9px;
+}
+
+
+/* =========================================
+   ÁREA FIXA DA TABELA
+   ROLAGEM VERTICAL + HORIZONTAL
+========================================= */
+
+.tabela-historico-wrapper {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 320px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior: contain;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.tabela-historico-analises {
+  width: 860px;
+  min-width: 860px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* COLUNAS */
+
+.tabela-historico-analises .coluna-data {
+  width: 85px;
+}
+
+.tabela-historico-analises .coluna-analise {
+  width: 90px;
+}
+
+
+/* =========================
+   CABEÇALHOS
+========================= */
+
+.tabela-historico-analises thead {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 3;
+}
+
+.tabela-historico-analises th {
+  height: 28px;
+
+  box-sizing: border-box;
+
+  padding: 3px 3px;
+
+  border: 1px solid #9ca8b4;
+
+  background: #c6d9ee;
+
+  color: #1f2937;
+
+  text-align: center;
+  vertical-align: middle;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  line-height: 1;
+}
+
+.tabela-historico-analises thead tr:nth-child(2) th {
+  background: #ffffff;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   CÉLULAS
+========================= */
+
+.tabela-historico-analises td {
+  height: 27px;
+
+  box-sizing: border-box;
+
+  padding: 2px 3px;
+
+  border: 1px solid #c4ccd4;
+
+  background: #ffffff;
+
+  color: #374151;
+
+  text-align: center;
+  vertical-align: middle;
+
+  font-size: 9px;
+
+  line-height: 1;
+}
+
+
+/* DATA */
+
+.celula-data-historico {
+  background: #f3f6f9 !important;
+
+  color: #073b75 !important;
+
+  font-size: 10px !important;
+  font-weight: 700 !important;
+}
+
+
+/* PARÂMETRO */
+
+.celula-parametro-historico {
+  text-align: left !important;
+
+  padding-left: 6px !important;
+
+  font-weight: 600;
+}
+
+
+/* VALORES */
+
+.celula-valor-historico {
+  font-weight: 600;
+}
+
+
+/* SEPARAÇÃO ENTRE DATAS */
+
+.tabela-historico-analises tbody tr:nth-child(5n) td {
+  border-bottom:
+    2px solid #9aa7b4;
+}
+
+
+/* =========================================
+   BARRAS DA TABELA
+========================================= */
+
+.tabela-historico-wrapper::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.tabela-historico-wrapper::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.tabela-historico-wrapper::-webkit-scrollbar-thumb {
+  background: #c7cdd4;
+
+  border-radius: 10px;
+}
+
+.tabela-historico-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #aeb6bf;
+}
+
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 900px) {
+
+  .grid-filtros-analises {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 650px) {
+
+  .grid-filtros-analises {
+    grid-template-columns: 1fr;
+  }
+
+
+  .topo-resultados-analises {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .botao-exportar-excel {
+    width: 100%;
+  }
+
+
+  .card-filtros-analises,
+  .card-resultados-analises {
+    padding: 14px;
+  }
+
+
+  .tabela-historico-wrapper {
+    height: 280px;
+  }
+
+
+  .tabela-historico-analises {
+    width: 860px;
+    min-width: 860px;
+  }
+
+}

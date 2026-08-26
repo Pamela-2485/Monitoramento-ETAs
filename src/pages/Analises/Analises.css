@@ -1,0 +1,891 @@
+.pagina-analises {
+  width: 100%;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho-analises {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.icone-analises {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #eef6fc;
+  color: #073b75;
+
+  border-radius: 11px;
+}
+
+.cabecalho-analises h1 {
+  margin: 0;
+
+  color: #073b75;
+  font-size: 27px;
+}
+
+.cabecalho-analises p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+  font-size: 12px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-dados-analise,
+.card-observacoes-analise,
+.card-historico-analises,
+.area-relatorio {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.card-dados-analise,
+.card-observacoes-analise,
+.card-historico-analises,
+.area-relatorio {
+  margin-bottom: 18px;
+}
+
+.titulo-card-analise {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-bottom: 17px;
+
+  color: #073b75;
+}
+
+.titulo-card-analise h2 {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   DADOS GERAIS
+========================= */
+
+.grid-dados-analise {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 14px;
+}
+
+.campo-analise {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.campo-analise label,
+.campo-parametro-analise label,
+.campo-observacoes-analise label {
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.campo-analise > input,
+.campo-analise select {
+  width: 100%;
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+}
+
+
+/* =========================
+   INPUT COM UNIDADE
+========================= */
+
+.input-unidade-analise,
+.input-parametro-analise {
+  display: flex;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+}
+
+.input-unidade-analise input,
+.input-parametro-analise input {
+  flex: 1;
+  min-width: 0;
+
+  height: 38px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: none;
+  outline: none;
+}
+
+.input-unidade-analise span,
+.input-parametro-analise span {
+  min-width: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f2f5f8;
+
+  border-left: 1px solid #dfe6ee;
+
+  color: #5e6b78;
+  font-size: 11px;
+}
+
+
+/* =========================
+   ETA / REDE
+========================= */
+
+.grid-locais-analise {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-bottom: 18px;
+}
+
+.card-local-analise {
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.cabecalho-local-analise {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 18px;
+}
+
+.icone-local-analise {
+  width: 37px;
+  height: 37px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  background: #eef6fc;
+  color: #073b75;
+}
+
+.cabecalho-local-analise h2 {
+  margin: 0;
+
+  color: #073b75;
+  font-size: 17px;
+}
+
+.cabecalho-local-analise span {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #6b7280;
+  font-size: 10px;
+}
+
+.campo-parametro-analise {
+  margin-bottom: 13px;
+}
+
+.campo-parametro-analise label {
+  display: block;
+
+  margin-bottom: 6px;
+}
+
+
+/* =========================
+   OBSERVAÇÕES
+========================= */
+
+.campo-observacoes-analise {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+}
+
+.campo-observacoes-analise textarea {
+  min-height: 70px;
+
+  box-sizing: border-box;
+
+  padding: 10px;
+
+  resize: vertical;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  outline: none;
+
+  font-family: inherit;
+}
+
+.botao-registrar-analise {
+  width: 100%;
+  height: 40px;
+
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #073b75;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.botao-registrar-analise:hover {
+  background: #0b4d91;
+}
+
+
+/* =========================
+   REGISTROS
+========================= */
+
+.lista-analises {
+  display: flex;
+  flex-direction: column;
+
+  gap: 8px;
+}
+
+.item-analise {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  padding: 11px 12px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #f7f9fb;
+
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.item-analise:hover {
+  background: #eef3f8;
+}
+
+.item-analise strong {
+  display: block;
+
+  color: #073b75;
+
+  font-size: 12px;
+}
+
+.item-analise span {
+  color: #6b7280;
+
+  font-size: 10px;
+}
+
+
+/* =========================
+   TOPO RELATÓRIO
+========================= */
+
+.topo-area-relatorio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 15px;
+
+  margin-bottom: 16px;
+}
+
+.topo-area-relatorio > div > span {
+  color: #6b7280;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: 0.7px;
+}
+
+.topo-area-relatorio h2 {
+  margin: 4px 0 0;
+
+  color: #073b75;
+
+  font-size: 18px;
+}
+
+.acoes-relatorio-geral {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+}
+
+.acoes-relatorio-geral input {
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  background: #ffffff;
+}
+
+.botao-gerar-png {
+  height: 40px;
+
+  padding: 0 17px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1687d9;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.botao-gerar-png:hover {
+  background: #1176bf;
+}
+
+
+/* =========================
+   RELATÓRIO INDIVIDUAL
+   MEDIDAS COMPACTAS
+========================= */
+
+.relatorio-individual-png {
+  width: 440px;
+  max-width: 440px;
+
+  margin: 0 auto;
+
+  padding: 14px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border: 1px solid #bcc7d2;
+}
+
+
+/* TÍTULO */
+
+.relatorio-individual-png h1 {
+  margin: 0 0 4px;
+
+  color: #073b75;
+
+  text-align: center;
+
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+/* DATA */
+
+.data-individual {
+  margin: 0 0 10px;
+
+  text-align: center;
+
+  color: #374151;
+
+  font-size: 11px;
+}
+
+
+/* TABELA INDIVIDUAL */
+
+.tabela-individual {
+  width: 100%;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-family: Arial, sans-serif;
+}
+
+
+/* CABEÇALHO */
+
+.tabela-individual th {
+  height: 30px;
+
+  box-sizing: border-box;
+
+  padding: 3px 4px;
+
+  background: #073b75;
+  color: #ffffff;
+
+  border: 1px solid #aeb9c5;
+
+  text-align: center;
+
+  font-size: 10px;
+  font-weight: 700;
+}
+
+
+/* CÉLULAS */
+
+.tabela-individual td {
+  height: 30px;
+
+  box-sizing: border-box;
+
+  padding: 3px 4px;
+
+  background: #ffffff;
+
+  border: 1px solid #aeb9c5;
+
+  text-align: center;
+
+  color: #000000;
+
+  font-size: 10px;
+}
+
+
+/* COLUNA PARÂMETRO */
+
+.tabela-individual th:first-child,
+.tabela-individual td:first-child {
+  width: 200px;
+}
+
+
+/* COLUNA ETA */
+
+.tabela-individual th:nth-child(2),
+.tabela-individual td:nth-child(2) {
+  width: 100px;
+}
+
+
+/* COLUNA REDE */
+
+.tabela-individual th:nth-child(3),
+.tabela-individual td:nth-child(3) {
+  width: 100px;
+}
+
+
+/* NOMES DOS PARÂMETROS */
+
+.tabela-individual td:first-child {
+  text-align: left;
+
+  font-weight: 700;
+}
+
+/* =========================
+   RELATÓRIO GERAL
+========================= */
+
+/* =========================
+   RELATÓRIO GERAL
+   MEDIDAS COMPACTAS
+========================= */
+
+.relatorio-geral-png {
+  width: 660px;
+  max-width: 660px;
+
+  margin: 0 auto;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  overflow: hidden;
+}
+
+
+/* DATA ACIMA DA TABELA */
+
+.data-geral {
+  width: 660px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  box-sizing: border-box;
+
+  margin: 0 0 5px;
+  padding: 3px 5px;
+
+  color: #073b75;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.data-geral span {
+  color: #374151;
+
+  font-size: 10px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   TABELA
+========================= */
+
+.tabela-geral {
+  width: 660px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-family: Arial, sans-serif;
+
+  background: #ffffff;
+}
+
+
+/* TODAS AS CÉLULAS */
+
+.tabela-geral th,
+.tabela-geral td {
+  height: 35px;
+
+  box-sizing: border-box;
+
+  padding: 2px 3px;
+
+  border: 1px solid #222222;
+
+  text-align: center;
+  vertical-align: middle;
+
+  color: #000000;
+
+  font-size: 11px;
+
+  line-height: 1;
+}
+
+
+/* =========================
+   COLUNA ANÁLISES
+========================= */
+
+.tabela-geral .celula-analises {
+  width: 121px;
+
+  background: #c6d9ee;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   PONTOS DE COLETA
+========================= */
+
+.tabela-geral .titulo-pontos {
+  height: 36px;
+
+  background: #c6d9ee;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+
+/* =========================
+   NOMES DAS ETAs
+========================= */
+
+.tabela-geral thead tr:nth-child(2) th {
+  height: 36px;
+
+  padding: 2px;
+
+  background: #ffffff;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  white-space: nowrap;
+}
+
+
+/* =========================
+   ETA / REDE
+========================= */
+
+.tabela-geral thead tr:nth-child(3) th {
+  height: 36px;
+
+  padding: 2px;
+
+  background: #ffffff;
+
+  font-size: 10px;
+  font-weight: 400;
+}
+
+
+/* =========================
+   PARÂMETROS
+========================= */
+
+.nome-parametro-geral {
+  width: 121px;
+
+  padding: 2px 4px !important;
+
+  background: #ffffff;
+
+  font-size: 11px !important;
+  font-weight: 400 !important;
+
+  text-align: center !important;
+}
+
+
+/* =========================
+   VALORES
+========================= */
+
+.valor-geral {
+  padding: 2px !important;
+
+  background: #ffffff;
+
+  font-size: 11px !important;
+  font-weight: 700 !important;
+
+  text-align: center;
+}
+
+
+/* =========================
+   BARRAS AZUIS
+========================= */
+
+.relatorio-geral-png::before,
+.relatorio-geral-png::after {
+  content: '';
+
+  display: block;
+
+  width: 660px;
+  height: 18px;
+
+  box-sizing: border-box;
+
+  background: #c6d9ee;
+
+  border-left: 1px solid #222222;
+  border-right: 1px solid #222222;
+}
+
+.relatorio-geral-png::before {
+  display: none;
+}
+
+.relatorio-geral-png::after {
+  border-bottom: 1px solid #222222;
+}
+
+
+/* =========================
+   CELULAS DAS 8 COLUNAS
+========================= */
+
+.tabela-geral th:not(.celula-analises),
+.tabela-geral td:not(.nome-parametro-geral) {
+  width: 67px;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 950px) {
+
+  .grid-dados-analise {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+@media (max-width: 700px) {
+
+  .grid-locais-analise {
+    grid-template-columns: 1fr;
+  }
+
+
+  .topo-area-relatorio {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .acoes-relatorio-geral {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+
+  .acoes-relatorio-geral input,
+  .botao-gerar-png {
+    width: 100%;
+  }
+
+
+  .area-relatorio {
+    overflow-x: auto;
+  }
+
+
+  .relatorio-geral-png {
+    width: 660px;
+    max-width: none;
+  }
+
+}
+
+
+@media (max-width: 550px) {
+
+  .grid-dados-analise {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+.acoes-relatorio-individual {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.botao-fechar-relatorio {
+  border: 1px solid #d7e0ea;
+  background: #ffffff;
+  color: #073b75;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.botao-fechar-relatorio:hover {
+  background: #f3f6f9;
+}

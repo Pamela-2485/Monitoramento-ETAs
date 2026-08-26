@@ -1,0 +1,309 @@
+.pagina-login {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px;
+
+  box-sizing: border-box;
+
+  background:
+    url('/imagem/fundo-login.png');
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card-login {
+  width: 100%;
+  max-width: 280px;
+
+  padding: 15px 20px 18px;
+
+  box-sizing: border-box;
+
+  background: #ffffff;
+
+  border-radius: 17px;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   IMAGEM
+========================= */
+
+.imagem-login {
+  display: flex;
+  justify-content: center;
+
+  margin-bottom: 3px;
+}
+
+.imagem-login img {
+  width: 105px;
+  height: 105px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================
+   TÍTULO
+========================= */
+
+.card-login h1 {
+  margin: 0;
+
+  color: #131f65;
+
+  text-align: center;
+
+  font-family:
+    'Times New Roman',
+    Times,
+    serif;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+
+.subtitulo-login {
+  margin: 4px 0 20px;
+
+  color: #6b7280;
+
+  text-align: center;
+
+  font-size: 12px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo-login {
+  display: flex;
+  flex-direction: column;
+
+  gap: 5px;
+
+  margin-bottom: 13px;
+}
+
+
+.campo-login label {
+  color: #21262f;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.campo-login input {
+  width: 100%;
+
+  height: 40px;
+
+  box-sizing: border-box;
+
+  padding: 0 12px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  color: #1f2937;
+
+  font-size: 13px;
+
+  outline: none;
+}
+
+
+.campo-login input:focus {
+  border-color: #073b75;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(7, 59, 117, 0.10);
+}
+
+
+/* =========================
+   ESQUECEU A SENHA
+========================= */
+
+.area-redefinir-senha {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: -5px;
+  margin-bottom: 12px;
+}
+
+
+.botao-redefinir-senha {
+  padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #073b75;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.botao-redefinir-senha:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================
+   BOTÃO ENTRAR
+========================= */
+
+.botao-entrar {
+  width: 100%;
+
+  height: 40px;
+
+  margin-top: 4px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: #131f65;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+
+.botao-entrar:hover {
+  background: #052f5e;
+}
+
+
+.botao-entrar:disabled {
+  opacity: 0.65;
+
+  cursor: not-allowed;
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 500px) {
+
+  .pagina-login {
+    padding: 12px;
+  }
+
+
+  .card-login {
+    max-width: 260px;
+
+    padding:
+      12px 16px 15px;
+
+    border-radius: 14px;
+  }
+
+
+  .imagem-login {
+    margin-bottom: 1px;
+  }
+
+
+  .imagem-login img {
+    width: 82px;
+    height: 82px;
+  }
+
+
+  .card-login h1 {
+    font-size: 20px;
+  }
+
+
+  .subtitulo-login {
+    margin:
+      3px 0 14px;
+
+    font-size: 11px;
+  }
+
+
+  .campo-login {
+    gap: 4px;
+
+    margin-bottom: 10px;
+  }
+
+
+  .campo-login label {
+    font-size: 11px;
+  }
+
+
+  .campo-login input {
+    height: 36px;
+
+    padding:
+      0 10px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+
+  .area-redefinir-senha {
+    margin-top: -3px;
+    margin-bottom: 9px;
+  }
+
+
+  .botao-redefinir-senha {
+    font-size: 10px;
+  }
+
+
+  .botao-entrar {
+    height: 36px;
+
+    margin-top: 2px;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+  }
+
+}

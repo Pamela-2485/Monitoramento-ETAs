@@ -1,0 +1,583 @@
+.pagina-solucoes {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho-solucoes {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+  min-width: 0;
+}
+
+.cabecalho-solucoes h1 {
+  margin: 0;
+  color: #073b75;
+  font-size: 28px;
+}
+
+.cabecalho-solucoes p {
+  margin-top: 4px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.icone-solucoes {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf4fb;
+  color: #073b75;
+  border-radius: 12px;
+}
+
+
+/* SELEÇÃO */
+
+.card-selecao-solucao {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+  padding: 18px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+
+  margin-bottom: 18px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.campo-solucao {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.campo-solucao label {
+  color: #374151;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.campo-solucao select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  height: 40px;
+  padding: 0 11px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #263445;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+
+/* GRID */
+
+.grid-calculo-solucao {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* CARDS */
+
+.card-calculo {
+  min-width: 0;
+  box-sizing: border-box;
+
+  background: #ffffff;
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+  padding: 18px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+.titulo-card-calculo {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  color: #073b75;
+  margin-bottom: 18px;
+
+  min-width: 0;
+}
+
+.titulo-card-calculo h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+
+/* CAMPOS */
+
+.campo-calculo {
+  margin-bottom: 14px;
+  min-width: 0;
+}
+
+.campo-calculo label {
+  display: block;
+  margin-bottom: 5px;
+
+  color: #4b5563;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.input-unidade {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.input-unidade input {
+  flex: 1;
+  min-width: 0;
+  height: 38px;
+
+  border: none;
+
+  padding: 0 10px;
+
+  outline: none;
+  box-sizing: border-box;
+}
+
+.input-unidade span {
+  min-width: 55px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f2f5f8;
+
+  border-left: 1px solid #dfe6ee;
+
+  color: #5e6b78;
+  font-size: 11px;
+}
+
+
+/* RESULTADOS */
+
+.resultado-solucao {
+  min-height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  padding: 0 12px;
+  margin-bottom: 10px;
+
+  background: #f7f9fc;
+
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+
+  min-width: 0;
+}
+
+.resultado-solucao span {
+  color: #4b5563;
+  font-size: 12px;
+}
+
+.resultado-solucao strong {
+  color: #073b75;
+  font-size: 14px;
+}
+
+
+/* BOTÃO */
+
+.botao-calcular-solucao {
+  width: 100%;
+  height: 40px;
+
+  margin-top: 5px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #073b75;
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.botao-calcular-solucao:hover {
+  background: #0b4d91;
+}
+
+
+/* PRODUTO SELECIONADO */
+
+.produto-selecionado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 10px 12px;
+  margin-bottom: 16px;
+
+  background: #eef6fc;
+
+  border: 1px solid #d6e7f4;
+  border-radius: 8px;
+
+  min-width: 0;
+}
+
+.produto-selecionado span {
+  color: #5e6b78;
+  font-size: 11px;
+}
+
+.produto-selecionado strong {
+  color: #073b75;
+  font-size: 12px;
+  text-align: right;
+}
+
+
+/* SEPARADOR */
+
+.separador-solucao {
+  height: 1px;
+  background: #e1e7ed;
+  margin: 18px 0;
+}
+
+.titulo-referencia {
+  margin-bottom: 14px;
+}
+
+
+/* BOTÃO REGISTRAR */
+
+.botao-registrar-solucao {
+  width: 100%;
+  height: 42px;
+
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #073b75;
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.botao-registrar-solucao:hover {
+  background: #0b4d91;
+}
+
+
+/* =========================================
+   SOLUÇÕES REGISTRADAS
+========================================= */
+
+.card-historico-solucoes {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 18px;
+
+  padding: 18px;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+
+  box-sizing: border-box;
+
+  /*
+    A tabela larga não pode alterar
+    a largura da página.
+  */
+  overflow: hidden;
+}
+
+.historico-solucao-vazio {
+  margin: 0;
+
+  color: #6b7280;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ÁREA FIXA DA TABELA
+   ROLAGEM VERTICAL + HORIZONTAL
+========================================= */
+
+.tabela-historico-solucoes-wrapper {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 300px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  border: 1px solid #e1e7ed;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+
+/* TABELA */
+
+.tabela-historico-solucoes {
+  width: max-content;
+  min-width: 1050px;
+
+  border-collapse: collapse;
+
+  background: #ffffff;
+}
+
+
+/* CABEÇALHO FIXO */
+
+.tabela-historico-solucoes thead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  background: #eef4f8;
+}
+
+.tabela-historico-solucoes th {
+  padding: 11px 12px;
+
+  border-bottom: 1px solid #d7e0e8;
+
+  color: #073b75;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+/* COLUNAS */
+
+.tabela-historico-solucoes th:nth-child(1),
+.tabela-historico-solucoes td:nth-child(1) {
+  min-width: 120px;
+}
+
+.tabela-historico-solucoes th:nth-child(2),
+.tabela-historico-solucoes td:nth-child(2) {
+  min-width: 190px;
+}
+
+.tabela-historico-solucoes th:nth-child(3),
+.tabela-historico-solucoes td:nth-child(3) {
+  min-width: 150px;
+}
+
+.tabela-historico-solucoes th:nth-child(4),
+.tabela-historico-solucoes td:nth-child(4) {
+  min-width: 110px;
+}
+
+.tabela-historico-solucoes th:nth-child(5),
+.tabela-historico-solucoes td:nth-child(5) {
+  min-width: 110px;
+}
+
+.tabela-historico-solucoes th:nth-child(6),
+.tabela-historico-solucoes td:nth-child(6) {
+  min-width: 130px;
+}
+
+.tabela-historico-solucoes th:nth-child(7),
+.tabela-historico-solucoes td:nth-child(7) {
+  min-width: 80px;
+}
+
+.tabela-historico-solucoes th:nth-child(8),
+.tabela-historico-solucoes td:nth-child(8) {
+  min-width: 90px;
+}
+
+.tabela-historico-solucoes th:nth-child(9),
+.tabela-historico-solucoes td:nth-child(9) {
+  min-width: 115px;
+}
+
+
+/* CÉLULAS */
+
+.tabela-historico-solucoes td {
+  padding: 10px 12px;
+
+  border-bottom: 1px solid #edf0f3;
+
+  color: #374151;
+
+  font-size: 11px;
+
+  white-space: nowrap;
+
+  vertical-align: middle;
+}
+
+.tabela-historico-solucoes tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.tabela-historico-solucoes tbody tr:hover {
+  background: #f7f9fb;
+}
+
+.coluna-produto-historico {
+  color: #073b75;
+  font-weight: 600;
+}
+
+
+/* =========================================
+   BARRAS DA TABELA
+========================================= */
+
+.tabela-historico-solucoes-wrapper::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.tabela-historico-solucoes-wrapper::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+.tabela-historico-solucoes-wrapper::-webkit-scrollbar-thumb {
+  background: #c7cdd4;
+  border-radius: 10px;
+}
+
+.tabela-historico-solucoes-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #aeb6bf;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 850px) {
+
+  .card-selecao-solucao,
+  .grid-calculo-solucao {
+    grid-template-columns: 1fr;
+  }
+
+  .card-selecao-solucao {
+    padding: 14px;
+  }
+
+  .card-calculo {
+    padding: 14px;
+  }
+
+  .card-historico-solucoes {
+    padding: 14px;
+  }
+
+  .tabela-historico-solucoes-wrapper {
+    height: 280px;
+  }
+
+  /*
+    A tabela continua larga no celular.
+    A largura extra existe SOMENTE
+    dentro do wrapper com rolagem.
+  */
+  .tabela-historico-solucoes {
+    min-width: 1000px;
+  }
+
+}

@@ -1,0 +1,88 @@
+.card-eta {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 14px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.07);
+  transition: 0.2s;
+}
+
+.card-eta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.1);
+}
+
+.icone-eta {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 10px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #eaf4fb;
+  color: #073b75;
+}
+
+.icone-gota {
+  position: absolute;
+  right: 6px;
+  bottom: 5px;
+  color: #1687d9;
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.card-eta h2 {
+  color: #073b75;
+  margin: 8px 0 4px;
+  font-size: 18px;
+}
+
+.card-eta p {
+  color: #6b7280;
+  margin: 0 0 12px;
+  font-size: 13px;
+}
+
+.card-eta button {
+  border: none;
+  background: #073b75;
+  color: white;
+  padding: 7px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+@media (max-width: 800px) {
+
+  .card-eta {
+    padding: 10px 12px;
+  }
+
+  .icone-eta {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 4px;
+  }
+
+  .card-eta h2 {
+    margin: 4px 0 2px;
+    font-size: 16px;
+  }
+
+  .card-eta p {
+    margin: 0 0 6px;
+    font-size: 12px;
+  }
+
+  .card-eta button {
+    padding: 5px 14px;
+    font-size: 12px;
+  }
+
+}

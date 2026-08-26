@@ -1,0 +1,37 @@
+.pagina-inicio {
+  width: 100%;
+}
+
+.titulo-inicio {
+  text-align: center;
+  color: #073b75;
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.subtitulo-inicio {
+  text-align: center;
+  color: #6b7280;
+  font-size: 14px;
+  margin-bottom: 22px;
+}
+
+.grid-etas {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 16px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+@media (max-width: 800px) {
+
+  .grid-etas {
+    grid-template-columns: 1fr;
+
+    /* somente controla o tamanho do card no celular */
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+}

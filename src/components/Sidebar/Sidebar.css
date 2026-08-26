@@ -1,0 +1,255 @@
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #073b75;
+  color: #ffffff;
+
+  padding: 25px 18px;
+
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.sidebar-logo-card {
+  background: #ffffff;
+
+  margin-top: -25px;
+  margin-left: -18px;
+  margin-right: -18px;
+  margin-bottom: 28px;
+
+  height: 200px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0 0 20px 20px;
+
+  flex-shrink: 0;
+}
+
+
+.sidebar-logo {
+  width: 155px;
+  height: 155px;
+
+  object-fit: contain;
+
+  display: block;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+
+.menu-item {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  box-sizing: border-box;
+
+  text-decoration: none;
+
+  color: #ffffff;
+
+  font-size: 16px;
+
+  transition: background 0.2s;
+}
+
+
+.menu-item:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* ITEM ATIVO */
+
+.menu-item-ativo,
+.menu-item.ativo {
+  background: #ffffff;
+
+  color: #073b75;
+}
+
+
+.menu-item-ativo .menu-texto {
+  color: #073b75 !important;
+
+  display: inline-block !important;
+
+  visibility: visible !important;
+
+  opacity: 1 !important;
+
+  font-size: 16px !important;
+}
+
+
+.menu-item.ativo {
+  color: #073b75;
+}
+
+
+.menu-icone {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   SAIR
+========================= */
+
+.botao-sair-sidebar {
+  margin-top: auto;
+
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+}
+
+
+.botao-sair-sidebar:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 768px) {
+
+  .sidebar {
+    width: 210px;
+    min-width: 210px;
+    max-width: 210px;
+
+    min-height: 100vh;
+
+    padding: 16px 12px;
+  }
+
+
+  /* LOGO MENOR */
+
+  .sidebar-logo-card {
+    height: 125px;
+
+    margin-top: -16px;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: 18px;
+
+    border-radius: 0 0 14px 14px;
+  }
+
+
+  .sidebar-logo {
+    width: 105px;
+    height: 105px;
+  }
+
+
+  /* MENU MAIS COMPACTO */
+
+  .sidebar-menu {
+    gap: 5px;
+  }
+
+
+  .menu-item {
+    min-height: 42px;
+
+    padding: 10px 11px;
+
+    gap: 8px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+  }
+
+
+  .menu-item-ativo .menu-texto {
+    font-size: 13px !important;
+  }
+
+
+  /* SAIR */
+
+  .botao-sair-sidebar {
+
+  margin-top: 12px;
+
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 14px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: transparent;
+
+  color: #ffffff;
+
+  font-size: 15px;
+
+  cursor: pointer;
+
+  transition: background 0.2s;
+
+}
+
+}

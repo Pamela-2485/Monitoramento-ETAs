@@ -1,0 +1,115 @@
+.pagina-cadastros {
+  width: 100%;
+  padding: 28px;
+  box-sizing: border-box;
+}
+
+.cabecalho-cadastros {
+  margin-bottom: 25px;
+}
+
+.cabecalho-cadastros > span {
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b7280;
+  letter-spacing: 1px;
+}
+
+.cabecalho-cadastros h1 {
+  margin: 5px 0;
+  color: #123b68;
+  font-size: 28px;
+}
+
+.cabecalho-cadastros p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.grid-cadastros {
+  display: grid;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card-cadastro {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  text-align: left;
+  cursor: pointer;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+
+  transition: 0.2s;
+}
+
+.card-cadastro:hover {
+  transform: translateY(-2px);
+  border-color: #b9cee2;
+
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.07);
+}
+
+.icone-cadastro {
+  width: 48px;
+  height: 48px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+
+  background: #eef6fc;
+  color: #123b68;
+}
+
+.conteudo-card-cadastro {
+  flex: 1;
+}
+
+.conteudo-card-cadastro h2 {
+  margin: 0 0 5px;
+  color: #123b68;
+  font-size: 17px;
+}
+
+.conteudo-card-cadastro p {
+  margin: 0;
+
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.seta-cadastro {
+  flex-shrink: 0;
+  color: #94a3b8;
+}
+
+@media (max-width: 750px) {
+
+  .pagina-cadastros {
+    padding: 18px;
+  }
+
+  .grid-cadastros {
+    grid-template-columns: 1fr;
+  }
+
+}

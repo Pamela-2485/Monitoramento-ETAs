@@ -1,0 +1,707 @@
+.pagina-calibracao {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho-calibracao {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 20px;
+
+  min-width: 0;
+}
+
+.cabecalho-calibracao h1 {
+  margin: 0;
+
+  color: #073b75;
+  font-size: 27px;
+}
+
+.cabecalho-calibracao p {
+  margin: 4px 0 0;
+
+  color: #6b7280;
+  font-size: 12px;
+}
+
+
+.botao-voltar-calibracao {
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  padding: 8px 11px;
+
+  border: 1px solid #d7e0e8;
+  border-radius: 8px;
+
+  background: #ffffff;
+  color: #073b75;
+
+  cursor: pointer;
+
+  flex-shrink: 0;
+}
+
+.botao-voltar-calibracao:hover {
+  background: #f7f9fb;
+}
+
+
+/* =========================
+   GRID PRINCIPAL
+========================= */
+
+.grid-calibracao {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.card-calibracao {
+  min-width: 0;
+
+  background: #ffffff;
+
+  border: 1px solid #dfe6ee;
+  border-radius: 14px;
+
+  padding: 18px;
+
+  box-sizing: border-box;
+
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.04);
+}
+
+
+.titulo-calibracao {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  color: #073b75;
+
+  margin-bottom: 18px;
+
+  min-width: 0;
+}
+
+.titulo-calibracao h2 {
+  margin: 0;
+
+  font-size: 17px;
+}
+
+
+/* =========================
+   CAMPOS
+========================= */
+
+.campo-calibracao {
+  display: flex;
+  flex-direction: column;
+
+  gap: 6px;
+
+  margin-bottom: 13px;
+
+  min-width: 0;
+}
+
+
+.campo-calibracao label {
+  color: #374151;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.campo-calibracao > input,
+.campo-calibracao select {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 40px;
+
+  padding: 0 10px;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+
+.campo-calibracao > input:focus,
+.campo-calibracao select:focus,
+.input-unidade-calibracao:focus-within {
+  border-color: #1687d9;
+
+  box-shadow:
+    0 0 0 2px rgba(22, 135, 217, 0.08);
+}
+
+
+/* =========================
+   INPUT COM UNIDADE
+========================= */
+
+.input-unidade-calibracao {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  display: flex;
+
+  border: 1px solid #cfd8e3;
+  border-radius: 8px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+}
+
+
+.input-unidade-calibracao input {
+  flex: 1;
+
+  min-width: 0;
+
+  height: 38px;
+
+  padding: 0 10px;
+
+  border: none;
+
+  outline: none;
+
+  box-sizing: border-box;
+}
+
+
+.input-unidade-calibracao span {
+  min-width: 55px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #f2f5f8;
+
+  border-left: 1px solid #dfe6ee;
+
+  color: #5e6b78;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   PULSAÇÕES DISPONÍVEIS
+========================= */
+
+.adicionar-pulsacao {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr) auto;
+
+  gap: 8px;
+
+  min-width: 0;
+}
+
+
+.botao-adicionar-pulsacao {
+  height: 40px;
+
+  padding: 0 13px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 5px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #1687d9;
+  color: #ffffff;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.botao-adicionar-pulsacao:hover {
+  background: #1176bf;
+}
+
+
+.lista-pulsacoes {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+
+  margin-top: 8px;
+
+  min-width: 0;
+}
+
+
+.tag-pulsacao {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+
+  padding: 6px 8px 6px 10px;
+
+  border: 1px solid #d4e5f3;
+  border-radius: 20px;
+
+  background: #eef6fc;
+
+  color: #073b75;
+
+  font-size: 11px;
+  font-weight: 600;
+}
+
+
+.tag-pulsacao button {
+  width: 18px;
+  height: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+
+  color: #6b7280;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  line-height: 1;
+}
+
+
+.tag-pulsacao button:hover {
+  background: #dbeaf5;
+  color: #b42318;
+}
+
+
+.nenhuma-pulsacao {
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+
+/* =========================
+   RESULTADO
+========================= */
+
+.resultado-vazao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 10px;
+
+  margin-top: 18px;
+
+  padding: 14px;
+
+  background: #eef6fc;
+
+  border: 1px solid #d4e5f3;
+  border-radius: 10px;
+
+  min-width: 0;
+}
+
+
+.resultado-vazao span {
+  color: #4b5563;
+
+  font-size: 12px;
+}
+
+
+.resultado-vazao strong {
+  color: #073b75;
+
+  font-size: 19px;
+}
+
+
+.resumo-vazao {
+  display: flex;
+  align-items: flex-start;
+
+  gap: 7px;
+
+  margin-top: 12px;
+
+  color: #5e6b78;
+
+  font-size: 11px;
+}
+
+
+.resumo-vazao svg {
+  flex-shrink: 0;
+
+  color: #1687d9;
+}
+
+
+/* =========================
+   BOTÃO SALVAR
+========================= */
+
+.botao-salvar-calibracao {
+  width: 100%;
+
+  height: 40px;
+
+  margin-top: 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #073b75;
+
+  color: #ffffff;
+
+  cursor: pointer;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+.botao-salvar-calibracao:hover {
+  background: #0b4d91;
+}
+
+
+/* =========================================
+   HISTÓRICO
+========================================= */
+
+.card-historico-calibracao {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  margin-top: 18px;
+
+  box-sizing: border-box;
+
+  overflow: hidden;
+}
+
+
+.historico-vazio {
+  padding: 24px 10px;
+
+  text-align: center;
+
+  color: #8a96a3;
+
+  font-size: 12px;
+}
+
+
+/* =========================================
+   ÁREA FIXA DO HISTÓRICO
+   ROLAGEM VERTICAL + HORIZONTAL
+========================================= */
+
+.tabela-calibracoes {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+
+  height: 300px;
+
+  overflow-x: auto;
+  overflow-y: auto;
+
+  border: 1px solid #e1e7ed;
+  border-radius: 9px;
+
+  background: #ffffff;
+
+  box-sizing: border-box;
+
+  -webkit-overflow-scrolling: touch;
+
+  overscroll-behavior: contain;
+}
+
+
+/* =========================================
+   LINHAS
+========================================= */
+
+.linha-tabela {
+  display: grid;
+
+  grid-template-columns:
+    100px
+    100px
+    100px
+    120px
+    130px
+    170px
+    50px;
+
+  align-items: center;
+
+  gap: 10px;
+
+  /*
+    A largura extra fica apenas
+    dentro da área com rolagem.
+  */
+  width: 850px;
+  min-width: 850px;
+
+  padding: 11px 10px;
+
+  border-bottom: 1px solid #edf1f5;
+
+  color: #4b5563;
+
+  font-size: 11px;
+
+  box-sizing: border-box;
+}
+
+
+.linha-tabela:last-child {
+  border-bottom: none;
+}
+
+
+/* CABEÇALHO */
+
+.cabecalho-tabela {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 2;
+
+  background: #f7f9fb;
+
+  color: #667281;
+
+  font-weight: 700;
+}
+
+
+/* VALORES */
+
+.linha-tabela span,
+.linha-tabela strong {
+  white-space: nowrap;
+}
+
+
+.linha-tabela strong {
+  color: #073b75;
+}
+
+
+/* =========================
+   EXCLUIR
+========================= */
+
+.botao-excluir-calibracao {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #ead8d8;
+  border-radius: 7px;
+
+  background: #ffffff;
+
+  color: #b42318;
+
+  cursor: pointer;
+}
+
+
+.botao-excluir-calibracao:hover {
+  background: #fff3f2;
+}
+
+
+/* =========================================
+   BARRAS DO HISTÓRICO
+========================================= */
+
+.tabela-calibracoes::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+
+.tabela-calibracoes::-webkit-scrollbar-track {
+  background: #f1f3f5;
+}
+
+
+.tabela-calibracoes::-webkit-scrollbar-thumb {
+  background: #c7cdd4;
+
+  border-radius: 10px;
+}
+
+
+.tabela-calibracoes::-webkit-scrollbar-thumb:hover {
+  background: #aeb6bf;
+}
+
+
+/* =========================
+   OUTROS
+========================= */
+
+.titulo-grupo-simulacao {
+  margin: 26px 0 14px;
+
+  padding-bottom: 8px;
+
+  border-bottom: 1px solid #e5eaf0;
+
+  color: #123b68;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* =========================================
+   RESPONSIVO
+========================================= */
+
+@media (max-width: 850px) {
+
+  .grid-calibracao {
+    grid-template-columns: 1fr;
+  }
+
+
+  .card-calibracao {
+    padding: 14px;
+  }
+
+
+  .tabela-calibracoes {
+    height: 280px;
+  }
+
+
+  .linha-tabela {
+    width: 820px;
+    min-width: 820px;
+
+    grid-template-columns:
+      95px
+      95px
+      95px
+      115px
+      125px
+      160px
+      45px;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .cabecalho-calibracao {
+    align-items: flex-start;
+  }
+
+
+  .cabecalho-calibracao h1 {
+    font-size: 22px;
+  }
+
+
+  .adicionar-pulsacao {
+    grid-template-columns: 1fr;
+  }
+
+
+  .botao-adicionar-pulsacao {
+    width: 100%;
+  }
+
+}

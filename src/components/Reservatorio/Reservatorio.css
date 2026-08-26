@@ -1,0 +1,15 @@
+.reservatorio-svg-wrapper {
+  width: 150px;
+  height: 190px;
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reservatorio-svg {
+  width: 145px;
+  height: 185px;
+  display: block;
+}
