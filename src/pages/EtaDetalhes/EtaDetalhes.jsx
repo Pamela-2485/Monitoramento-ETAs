@@ -263,9 +263,9 @@ function EtaDetalhes() {
 
 
                     esp32:
-                      ultimaLeitura
-                        ?.esp32_status ||
-                      'Sem comunicação',
+                      verificarStatusEsp32(
+                       ultimaLeitura?.data_leitura
+                       ),
 
 
                     ultimaLeitura:
@@ -723,6 +723,31 @@ function EtaDetalhes() {
 
 }
 
+// =========================
+// STATUS DO ESP32
+// =========================
+
+function verificarStatusEsp32(dataLeitura) {
+
+  if (!dataLeitura) {
+    return 'Sem comunicação'
+  }
+
+  const agora = new Date()
+  const ultima = new Date(dataLeitura)
+
+  const diferencaMs =
+    agora.getTime() - ultima.getTime()
+
+  const diferencaMinutos =
+    diferencaMs / (1000 * 60)
+
+  if (diferencaMinutos <= 5) {
+    return 'Online'
+  }
+
+  return 'Sem comunicação'
+}
 
 // =========================
 // FORMATAR DATA/HORA
