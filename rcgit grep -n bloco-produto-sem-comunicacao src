@@ -1,0 +1,5 @@
+[35msrc/App.jsx[m[36m:[m[32m31[m[36m:[mimport [1;31mHistoricoMonitoramento[m from './pages/Historico/[1;31mHistoricoMonitoramento[m'
+[35msrc/App.jsx[m[36m:[m[32m262[m[36m:[m          element={<[1;31mHistoricoMonitoramento[m />}
+[35msrc/pages/Historico/HistoricoMonitoramento.jsx[m[36m:[m[32m19[m[36m:[mimport './[1;31mHistoricoMonitoramento[m.css'
+[35msrc/pages/Historico/HistoricoMonitoramento.jsx[m[36m:[m[32m22[m[36m:[mfunction [1;31mHistoricoMonitoramento[m() {
+[35msrc/pages/Historico/HistoricoMonitoramento.jsx[m[36m:[m[32m1899[m[36m:[mexport default [1;31mHistoricoMonitoramento[m
