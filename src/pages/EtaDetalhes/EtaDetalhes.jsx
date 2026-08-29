@@ -513,13 +513,15 @@ function EtaDetalhes() {
             return (
 
               <div
-                className={
-                  emAlerta
-                    ? 'bloco-produto bloco-produto-alerta'
-                    : 'bloco-produto'
-                }
-                key={produto.id}
-              >
+  className={
+    semComunicacao
+      ? 'bloco-produto bloco-produto-sem-comunicacao'
+      : emAlerta
+        ? 'bloco-produto bloco-produto-alerta'
+        : 'bloco-produto'
+  }
+  key={produto.id}
+>
 
 
                 {/* =========================
