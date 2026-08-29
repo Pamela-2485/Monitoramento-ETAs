@@ -5,7 +5,11 @@ import {
   ArrowLeft,
   Search,
   Radio,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Droplets,
+  Clock3,
+  Gauge,
+  TrendingDown
 } from 'lucide-react'
 
 import * as XLSX from 'xlsx'
@@ -416,6 +420,12 @@ function HistoricoMonitoramento() {
                 id:
                   registro.id,
 
+                reservatorioId:
+                  reservatorioId || '',
+
+                dataHoraOriginal:
+                  registro.data_leitura,
+
                 data:
                   dataRegistro,
 
@@ -608,6 +618,226 @@ function HistoricoMonitoramento() {
       dataFinal,
       etaFiltro,
       produtoFiltro
+    ])
+
+
+  // =========================
+  // RESUMO DO PERÍODO
+  // =========================
+
+  const resumoPeriodo =
+    useMemo(() => {
+
+      if (
+        !pesquisou ||
+        resultados.length === 0
+      ) {
+
+        return {
+          consumo: 0,
+          tempoAtivoMinutos: 0,
+          volumeInicial: 0,
+          volumeFinal: 0
+        }
+
+      }
+
+
+      // Agrupa as leituras por reservatório.
+      // Isso permite calcular corretamente mesmo
+      // quando o filtro mostra mais de um reservatório.
+      const grupos = new Map()
+
+
+      resultados.forEach(
+        (registro) => {
+
+          const chave =
+            registro.reservatorioId ||
+            `${registro.etaId}-${registro.produtoId}`
+
+
+          if (!grupos.has(chave)) {
+
+            grupos.set(
+              chave,
+              []
+            )
+
+          }
+
+
+          grupos
+            .get(chave)
+            .push(registro)
+
+        }
+      )
+
+
+      let consumoTotal = 0
+      let tempoAtivoMinutos = 0
+      let volumeInicialTotal = 0
+      let volumeFinalTotal = 0
+
+
+      grupos.forEach(
+        (leituras) => {
+
+          const ordenadas =
+            [...leituras].sort(
+              (a, b) =>
+                new Date(
+                  a.dataHoraOriginal
+                ).getTime() -
+                new Date(
+                  b.dataHoraOriginal
+                ).getTime()
+            )
+
+
+          if (ordenadas.length === 0) {
+            return
+          }
+
+
+          const volumeInicialGrupo =
+            Number(
+              ordenadas[0].volumeAtual
+            ) || 0
+
+
+          const volumeFinalGrupo =
+            Number(
+              ordenadas[
+                ordenadas.length - 1
+              ].volumeAtual
+            ) || 0
+
+
+          volumeInicialTotal +=
+            volumeInicialGrupo
+
+          volumeFinalTotal +=
+            volumeFinalGrupo
+
+
+          // O consumo parte da diferença entre o
+          // volume inicial e o final. Aumentos grandes
+          // de volume são tratados como reabastecimento.
+          // Pequenas oscilações do sensor não entram
+          // como consumo adicional.
+          let reabastecimentos = 0
+
+
+          for (
+            let i = 1;
+            i < ordenadas.length;
+            i++
+          ) {
+
+            const anterior =
+              ordenadas[i - 1]
+
+            const atual =
+              ordenadas[i]
+
+
+            const volumeAnterior =
+              Number(
+                anterior.volumeAtual
+              ) || 0
+
+            const volumeAtual =
+              Number(
+                atual.volumeAtual
+              ) || 0
+
+
+            const aumentoVolume =
+              volumeAtual - volumeAnterior
+
+
+            // Considera reabastecimento quando o
+            // aumento for de pelo menos 5 litros.
+            if (aumentoVolume >= 5) {
+
+              reabastecimentos +=
+                aumentoVolume
+
+            }
+
+
+            // TEMPO ATIVO ESTIMADO
+            const inicio =
+              new Date(
+                anterior.dataHoraOriginal
+              )
+
+            const fim =
+              new Date(
+                atual.dataHoraOriginal
+              )
+
+
+            const diferencaMinutos =
+              (
+                fim.getTime() -
+                inicio.getTime()
+              ) /
+              (1000 * 60)
+
+
+            // Até 5 minutos entre duas leituras
+            // é considerado funcionamento contínuo.
+            if (
+              diferencaMinutos > 0 &&
+              diferencaMinutos <= 5
+            ) {
+
+              tempoAtivoMinutos +=
+                diferencaMinutos
+
+            }
+
+          }
+
+
+          const consumoGrupo =
+            volumeInicialGrupo +
+            reabastecimentos -
+            volumeFinalGrupo
+
+
+          if (consumoGrupo > 0) {
+
+            consumoTotal +=
+              consumoGrupo
+
+          }
+
+        }
+      )
+
+
+      return {
+
+        consumo:
+          consumoTotal,
+
+        tempoAtivoMinutos,
+
+        volumeInicial:
+          volumeInicialTotal,
+
+        volumeFinal:
+          volumeFinalTotal
+
+      }
+
+    }, [
+      pesquisou,
+      resultados
     ])
 
 
@@ -1084,6 +1314,261 @@ function HistoricoMonitoramento() {
           </div>
 
 
+          {resultados.length > 0 && (
+
+            <div
+              className="resumo-monitoramento"
+              style={{
+                display: 'grid',
+                gridTemplateColumns:
+                  'repeat(auto-fit, minmax(180px, 1fr))',
+                gap: '12px',
+                margin: '18px 0 20px'
+              }}
+            >
+
+
+              <div
+                className="card-resumo-monitoramento"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '12px'
+                }}
+              >
+
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    borderRadius: '10px',
+                    background: '#eaf2ff',
+                    color: '#2563eb'
+                  }}
+                >
+                  <Droplets size={21} />
+                </div>
+
+                <div>
+
+                  <span
+                    style={{
+                      display: 'block',
+                      marginBottom: '4px',
+                      color: '#64748b',
+                      fontSize: '12px'
+                    }}
+                  >
+                    Consumo no período
+                  </span>
+
+                  <strong
+                    style={{
+                      display: 'block',
+                      color: '#0f172a',
+                      fontSize: '18px'
+                    }}
+                  >
+                    {formatarNumero(
+                      resumoPeriodo.consumo
+                    )} L
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div
+                className="card-resumo-monitoramento"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '12px'
+                }}
+              >
+
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    borderRadius: '10px',
+                    background: '#eefbf3',
+                    color: '#15803d'
+                  }}
+                >
+                  <Clock3 size={21} />
+                </div>
+
+                <div>
+
+                  <span
+                    style={{
+                      display: 'block',
+                      marginBottom: '4px',
+                      color: '#64748b',
+                      fontSize: '12px'
+                    }}
+                  >
+                    Tempo ativo estimado
+                  </span>
+
+                  <strong
+                    style={{
+                      display: 'block',
+                      color: '#0f172a',
+                      fontSize: '18px'
+                    }}
+                  >
+                    {formatarTempoAtivo(
+                      resumoPeriodo.tempoAtivoMinutos
+                    )}
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div
+                className="card-resumo-monitoramento"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '12px'
+                }}
+              >
+
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    borderRadius: '10px',
+                    background: '#f3f4f6',
+                    color: '#475569'
+                  }}
+                >
+                  <Gauge size={21} />
+                </div>
+
+                <div>
+
+                  <span
+                    style={{
+                      display: 'block',
+                      marginBottom: '4px',
+                      color: '#64748b',
+                      fontSize: '12px'
+                    }}
+                  >
+                    Volume inicial
+                  </span>
+
+                  <strong
+                    style={{
+                      display: 'block',
+                      color: '#0f172a',
+                      fontSize: '18px'
+                    }}
+                  >
+                    {formatarNumero(
+                      resumoPeriodo.volumeInicial
+                    )} L
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <div
+                className="card-resumo-monitoramento"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px',
+                  background: '#f8fafc',
+                  border: '1px solid #e2e8f0',
+                  borderRadius: '12px'
+                }}
+              >
+
+                <div
+                  style={{
+                    width: '40px',
+                    height: '40px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    flexShrink: 0,
+                    borderRadius: '10px',
+                    background: '#fff7ed',
+                    color: '#c2410c'
+                  }}
+                >
+                  <TrendingDown size={21} />
+                </div>
+
+                <div>
+
+                  <span
+                    style={{
+                      display: 'block',
+                      marginBottom: '4px',
+                      color: '#64748b',
+                      fontSize: '12px'
+                    }}
+                  >
+                    Volume final
+                  </span>
+
+                  <strong
+                    style={{
+                      display: 'block',
+                      color: '#0f172a',
+                      fontSize: '18px'
+                    }}
+                  >
+                    {formatarNumero(
+                      resumoPeriodo.volumeFinal
+                    )} L
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+          )}
+
+
           {resultados.length === 0 ? (
 
             <div className="sem-resultados-monitoramento">
@@ -1341,6 +1826,38 @@ function formatarNumero(valor) {
         maximumFractionDigits: 2
       }
     )
+
+}
+
+
+function formatarTempoAtivo(
+  minutos
+) {
+
+  const minutosArredondados =
+    Math.round(
+      Number(minutos) || 0
+    )
+
+
+  const horas =
+    Math.floor(
+      minutosArredondados / 60
+    )
+
+
+  const minutosRestantes =
+    minutosArredondados % 60
+
+
+  if (horas === 0) {
+
+    return `${minutosRestantes} min`
+
+  }
+
+
+  return `${horas} h ${minutosRestantes} min`
 
 }
 
