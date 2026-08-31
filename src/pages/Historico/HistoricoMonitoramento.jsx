@@ -295,10 +295,7 @@ function HistoricoMonitoramento() {
   // CARREGAR MONITORAMENTO
   // =========================
 
-  useEffect(() => {
-
-    async function carregarMonitoramento() {
-
+  async function carregarMonitoramento() {
       setCarregandoMonitoramento(true)
       setErroCarregamento('')
 
@@ -353,7 +350,7 @@ function HistoricoMonitoramento() {
             'Não foi possível carregar o histórico de monitoramento.'
           )
 
-          return
+          return false
 
         }
 
@@ -502,6 +499,8 @@ function HistoricoMonitoramento() {
         )
 
 
+        return true
+
       } catch (erro) {
 
         console.error(
@@ -513,14 +512,19 @@ function HistoricoMonitoramento() {
           'Não foi possível conectar ao banco de dados.'
         )
 
+        return false
+
       } finally {
 
         setCarregandoMonitoramento(false)
 
       }
 
-    }
 
+  }
+
+
+  useEffect(() => {
 
     carregarMonitoramento()
 
@@ -862,7 +866,7 @@ function HistoricoMonitoramento() {
   // BUSCAR
   // =========================
 
-  function buscar() {
+  async function buscar() {
 
     if (
       dataInicial &&
@@ -878,7 +882,15 @@ function HistoricoMonitoramento() {
     }
 
 
-    setPesquisou(true)
+    const carregou =
+      await carregarMonitoramento()
+
+
+    if (carregou !== false) {
+
+      setPesquisou(true)
+
+    }
 
   }
 
