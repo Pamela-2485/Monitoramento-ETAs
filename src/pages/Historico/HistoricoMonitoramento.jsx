@@ -73,7 +73,7 @@ function HistoricoMonitoramento() {
   const [
     carregandoMonitoramento,
     setCarregandoMonitoramento
-  ] = useState(true)
+  ] = useState(false)
 
   const [
     erroCarregamento,
@@ -302,57 +302,153 @@ function HistoricoMonitoramento() {
 
       try {
 
-        const {
-          data,
-          error
-        } =
-          await supabase
-            .from('leituras_reservatorios')
-            .select(`
-              id,
-              volume_l,
-              percentual,
-              esp32_status,
-              data_leitura,
+        // O Supabase/PostgREST normalmente limita a quantidade
+        // de linhas devolvidas por uma única requisição.
+        // Por isso buscamos o histórico em páginas de 1000 registros.
+        // Os filtros de data já são enviados ao banco para evitar
+        // carregar registros desnecessários.
+        const TAMANHO_PAGINA = 1000
 
-              reservatorios (
+        let todosRegistros = []
+        let inicioPagina = 0
+        let continuarBuscando = true
+
+
+        while (continuarBuscando) {
+
+          let consulta =
+            supabase
+              .from('leituras_reservatorios')
+              .select(`
                 id,
-                nome,
-                capacidade_l,
+                volume_l,
+                percentual,
+                esp32_status,
+                data_leitura,
 
-                etas (
-                  slug,
-                  nome
-                ),
+                reservatorios (
+                  id,
+                  nome,
+                  capacidade_l,
 
-                produtos (
-                  slug,
-                  nome
+                  etas (
+                    slug,
+                    nome
+                  ),
+
+                  produtos (
+                    slug,
+                    nome
+                  )
                 )
+              `)
+              .order(
+                'data_leitura',
+                {
+                  ascending: true
+                }
               )
-            `)
-            .order(
-              'data_leitura',
-              {
-                ascending: true
-              }
+
+
+          // Data inicial: 00:00 no horário local do navegador.
+          if (dataInicial) {
+
+            const inicioData =
+              new Date(
+                `${dataInicial}T00:00:00`
+              )
+
+            consulta =
+              consulta.gte(
+                'data_leitura',
+                inicioData.toISOString()
+              )
+
+          }
+
+
+          // Data final: busca até antes de 00:00 do dia seguinte.
+          // Assim todo o dia selecionado é incluído.
+          if (dataFinal) {
+
+            const fimData =
+              new Date(
+                `${dataFinal}T00:00:00`
+              )
+
+            fimData.setDate(
+              fimData.getDate() + 1
+            )
+
+            consulta =
+              consulta.lt(
+                'data_leitura',
+                fimData.toISOString()
+              )
+
+          }
+
+
+          consulta =
+            consulta.range(
+              inicioPagina,
+              inicioPagina +
+                TAMANHO_PAGINA -
+                1
             )
 
 
-        if (error) {
-
-          console.error(
-            'Erro ao carregar monitoramento:',
+          const {
+            data,
             error
-          )
+          } = await consulta
 
-          setErroCarregamento(
-            'Não foi possível carregar o histórico de monitoramento.'
-          )
 
-          return false
+          if (error) {
+
+            console.error(
+              'Erro ao carregar monitoramento:',
+              error
+            )
+
+            setErroCarregamento(
+              'Não foi possível carregar o histórico de monitoramento.'
+            )
+
+            return false
+
+          }
+
+
+          const pagina =
+            data || []
+
+
+          todosRegistros =
+            todosRegistros.concat(
+              pagina
+            )
+
+
+          if (
+            pagina.length <
+            TAMANHO_PAGINA
+          ) {
+
+            continuarBuscando = false
+
+          } else {
+
+            inicioPagina +=
+              TAMANHO_PAGINA
+
+          }
 
         }
+
+
+        const data =
+          todosRegistros
 
 
         const ultimoVolumePorReservatorio =
@@ -522,15 +618,6 @@ function HistoricoMonitoramento() {
 
 
   }
-
-
-  useEffect(() => {
-
-    carregarMonitoramento()
-
-  }, [])
-
-
   // =========================
   // PRODUTOS DISPONÍVEIS
   // =========================
